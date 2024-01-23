@@ -1,4 +1,7 @@
 '''
+NOTE: BEFORE YOUR START A PROJECT ON YOUR CMD LIND, ENSURE YOU CHECK THE WORKING DIRECTORY (PWD)
+
+
 You use all these devices to send data to a computer and receive data from it. But there's something else that supports communication with your devices. These are graphical user interfaces or GUIs which facilitate your interactions. GUIs are popular because they require very little training to use. GUIs offer an easy way to interact with devices, but they also somewhat limit the scope of human-computer interaction. As an alternative to GUIs and input devices such as microphones, you will learn to interact with your computer through the command line
 
 
