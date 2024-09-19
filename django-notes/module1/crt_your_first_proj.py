@@ -19,7 +19,7 @@ Your project is an organizational unit that consists of settings and database in
 
 First, open a new terminal by choosing terminal, new terminal from the top menu. Next, create a new directory by using the make directory command and then give your directory a name like build Django. Then enter inside this directory using the change directory command.
 
-Next, you need to set up the virtual environment to do this, type Python 3-m and then venv.
+Next, you need to set up the virtual environment to do this, type Python 3-m and then venv. (python3 -m venv tutorial-env)
 
 Then give the virtual environment a name such as tutorial-env. Once you are finished, press "Enter." 
 
@@ -27,15 +27,15 @@ If you open the directory structure in VS Code, notice that some new files have 
 
 Notice that the virtual environment is activated by the round brackets suffix in the terminal.
 
-Once the virtual environment package is installed, you are ready to install Django, and you do this by using the command pip3 install Django.
+Once the virtual environment package is installed, you are ready to install Django, and you do this by using the command pip3 install Django. (pip3 install django)
 
 To make sure that Django is installed, you can run the command Python3 -m Django version. Notice that the current version is 4.1. Once this is set up, you are ready to create a project, and you do this by running Django's built-in command line tools.
 
-Type Django admin, start project, and then give the project a name. In this example, it's shifts table finally, press "Enter" to run the command. If you expand the directory structure again, notice that the shifts table is created with supportive Django specific files.
+Type Django admin, start project, and then give the project a name (django-admin  startproject chefstable). In this example, it's shifts table finally, press "Enter" to run the command. If you expand the directory structure again, notice that the shifts table is created with supportive Django specific files.
 
 Once your Django project is created, you need to launch the development server. Before you do this, it's important to be aware of the manage.py file that is automatically created with the project. Recall that manage.py is a command line utility that works like the Django admin command.
 
-You can replace the Django admin command with manage.py as it uses the project settings. To launch the development server you can run the run server command using the manage.py command. You will learn more about how to work with Django admin, and manage.py commands later. 
+You can replace the Django admin command with manage.py as it uses the project settings. To launch the development server you can run the run server command using the manage.py command. You will learn more about how to work with Django admin, and manage.py commands later. (inside the project folder: python3 manage.py runserver)
 
 In this video, you learned how to create your first project in Django using the terminal VS Code, and Django is built-in command line tools.
 '''
