@@ -5,3 +5,7 @@ from django.http import HttpResponse
 
 def home(request):
     return HttpResponse("Hello world")
+
+def play(request):
+    return HttpResponse('Just playing')
+
