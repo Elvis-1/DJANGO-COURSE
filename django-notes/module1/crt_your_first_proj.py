@@ -1,9 +1,9 @@
 '''
 By now, you should be familiar with the concept of projects and apps in Django. You also explored the core files that make up a Django project. In this video, you will learn how to create your first Django project using the terminal and the VS Code editor.
 
- You will also learn how to set up the development environment, by installing a virtual environment, and you will explore some common CLI commands used to create Django projects and launched the development server.
+You will also learn how to set up the development environment, by installing a virtual environment, and you will explore some common CLI commands used to create Django projects and launched the development server.
 
- If you are a Python developer working on multiple projects, It's best practice to keep your projects isolated in a virtual environment, which you may be wondering why you need to do this. Well, Django projects can often be quite large and involve specific dependencies for things like packages. For example you could have a package that has a dependency on a specific version. 
+If you are a Python developer working on multiple projects, It's best practice to keep your projects isolated in a virtual environment, which you may be wondering why you need to do this. Well, Django projects can often be quite large and involve specific dependencies for things like packages. For example you could have a package that has a dependency on a specific version. 
 
 You do not want this conflicting with your other Python or Django projects so it's best to keep your projects isolated using a virtual development environment.
 
