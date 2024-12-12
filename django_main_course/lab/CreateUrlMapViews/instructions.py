@@ -92,4 +92,36 @@ Change the URL path string for the about view inside urls.py from 'about/' to 'a
 Go to the URL http://127.0.0.1:8000/aboutus and check if the About page renders at this URL.
 
 Additionally, ensure that the about page will not render on the URL http://127.0.0.1:8000/about.
+
+Here is the solution code for the urls.py - App-level file:
+
+from django.urls import path, include
+from . import views
+
+urlpatterns = [
+        path('', views.home, name="home"),
+        path('menu/', views.menu, name="menu"),
+        path('about/', views.about, name="about"),
+        path('book/', views.book, name="book"),
+] 
+
+Here is the solution code for the views.py file.
+
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+def home(request):
+    return HttpResponse("Welcome to Little Lemon !")
+
+def about(request):
+    return HttpResponse("About us")
+
+def menu(request):
+    return HttpResponse("Menu for Little Lemon")
+
+def book(request):
+    return HttpResponse("Make a booking")
+
 '''

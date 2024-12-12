@@ -161,4 +161,32 @@ drink.save()
 
 Concluding Thoughts
 In this lab, you practiced creating a one-to-many relationship using models and foreign keys
+
+models.py
+
+from django.db import models
+
+# Create your models here.
+class DrinksCategory(models.Model):
+    category_name = models.CharField(max_length=200)
+
+class Drinks(models.Model):
+    drink = models.CharField(max_length=200)
+    price = models.IntegerField()
+    category_id = models.ForeignKey(DrinksCategory, on_delete=models.PROTECT, default=None)
+
+admin.py
+
+from django.contrib import admin
+from .models import Drinks
+from .models import DrinksCategory
+
+# Register your models here.
+admin.site.register(Drinks)
+admin.site.register(DrinksCategory)
+
+Commands for running migrations:
+
+python3 manage.py makemigrations
+python3 manage.py migrate
 '''

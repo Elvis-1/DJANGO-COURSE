@@ -145,4 +145,37 @@ Note: You may not see any contents inside the myapp_drinks table as it is empty.
 
 Concluding Thoughts
 In this lab, you practiced creating a model (Drinks) and ran the migrations to create the associated database tables.
+
+Here is the solution code for models.py - Initial migration
+
+from django.db import models
+
+# Create your models here.
+class Drinks(models.Model):
+    drink = models.CharField(max_length=200)
+    price = models.IntegerField()
+
+Here is the solution code for models.py - Second migration
+
+from django.db import models
+
+# Create your models here.
+class Drinks(models.Model):
+    drink_name = models.CharField(max_length=200)
+    price = models.IntegerField()
+    
+Here is the solution code for admin.py
+
+from django.contrib import admin
+from .models import Drinks
+
+# Register your models here.
+admin.site.register(Drinks)
+
+Shell commands for performing migrations
+
+# Commands to perform migrations
+
+python3 manage.py makemigrations
+python3 manage.py migrate
 '''
