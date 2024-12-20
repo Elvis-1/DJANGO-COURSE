@@ -168,6 +168,7 @@ The effect of the PROTECT option is the opposite of CASCADE. It prevents the del
 If a customer has vehicles, it cannot be deleted. It’s important to know that if you forcefully delete the customer, Django raises the ProtectedError.
 
 RESTRICT
+
 The difference between PROTECT and RESTRICT is that when you delete the referenced object, the on_delete option raises the RestrictedError. 
 
 The deletion of the referenced object is allowed if it also references a different object that is being deleted in the same operation, but via a CASCADE relationship.
@@ -190,6 +191,70 @@ class Song(models.Model):
 >>> album2 = Album.objects.create(artist=artist2) 
 >>> song1 = Song.objects.create(artist=artist1, album=album1) 
 >>> song_two = Song.objects.create(artist=artis1, album=album2)
+
+You can safely delete the artist1 instance. If you try to delete artist2, the RestrictedError is raised.
+
+
+
+OneToOneField: 
+
+This field in one of the models establishes a one-to-one relationship between the two models. 
+
+Although a ForeignKey field with unique=True setting, behaves similarly, the reverse side of the relationship will always return a single object.
+
+The following model definition demonstrates a one-to-one relationship between the college model and a principal model. 
+
+A college can have only one principal and one person can be a principal of only one college.
+
+class college(Model): 
+    CollegeID = models.IntegerField(primary_key = True) 
+    name = models.CharField(max_length=50) 
+    strength = models.IntegerField() 
+    website=models.URLField() 
+
+class Principal(models.Model): 
+    CollegeID = models.OneToOneField( 
+                College, 
+                on_delete=models.CASCADE 
+                ) 
+    Qualification = models.CharField(max_length=50) 
+    email = models.EmailField(max_length=50) 
+
+class college(Model): 
+    CollegeID = models.IntegerField(primary_key = True) 
+    name = models.CharField(max_length=50) 
+    strength = models.IntegerField() 
+    website=models.URLField() 
+
+class Principal(models.Model): 
+    CollegeID = models.OneToOneField( 
+                College, 
+                on_delete=models.CASCADE 
+                ) 
+    Qualification = models.CharField(max_length=50) 
+    email = models.EmailField(max_length=50)
+
+
+ManyToManyField: 
+
+This field helps in setting a many-to-many relationship between two models. 
+
+Here, multiple objects of one model can be associated with multiple objects of another model. 
+
+For example, in the case of Subject and Teacher models, a subject is taught by more than one teacher. 
+
+Similarly, a teacher can teach more than one subject. This is represented in the following model definitions:
+
+class Teacher(models.Model): 
+    TeacherID = models.ItegerField(primary_key=True) 
+    Qualification = models.CharField(max_length=50) 
+    email = models.EmailField(max_length=50) 
+
+class Subject(models.Model): 
+    Subjectcode = models.IntegerField(primary_key = True) 
+    name = models.CharField(max_length=30) 
+    credits = model.IntegerField() 
+    teacher = model.ManyToManyField(Teacher) 
 
 
 '''
