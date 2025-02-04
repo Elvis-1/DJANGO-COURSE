@@ -38,4 +38,5 @@ Once your Django project is created, you need to launch the development server. 
 You can replace the Django admin command with manage.py as it uses the project settings. To launch the development server you can run the run server command using the manage.py command. You will learn more about how to work with Django admin, and manage.py commands later. (inside the project folder: python3 manage.py runserver)
 
 In this video, you learned how to create your first project in Django using the terminal VS Code, and Django is built-in command line tools.
+
 '''

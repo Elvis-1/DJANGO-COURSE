@@ -2,8 +2,8 @@
 
 <form action="" method="post" style="background-color: aliceblue;">
     {% csrf_token %}
-    {{form}}
-    <!-- {{form.as_p}} as paragraph --> 
+    <!-- {{form}} -->
+    {{form.as_p}}       <!--   as paragraph  -->
 
     <input type="submit" value="Submit">
 </form>
